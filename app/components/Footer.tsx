@@ -33,7 +33,7 @@ export default function Footer() {
 
           {/* Lado Direito: Copyright */}
           <div className="text-sm text-slate-500 dark:text-slate-500">
-            © {currentYear} — Feito com Next.js e Tailwind
+            © {currentYear} Gustavo Rizzo — Todos os direitos reservados.
           </div>
         </div>
         
