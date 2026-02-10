@@ -32,3 +32,15 @@ body {
   font-family: var(--font-poppins), ui-sans-serif, system-ui;
   @apply transition-colors duration-500;
 }
+
+@layer utilities {
+  .animate-marquee {
+    display: flex;
+    animation: marquee 20s linear infinite;
+  }
+
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+}

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./components/providers";
+import { LanguageProvider } from "./components/LanguageContext"; // Importe o novo provider
 
 // Configuração das fontes
 const geistSans = Geist({
@@ -31,7 +32,6 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    // suppressHydrationWarning é essencial para o next-themes não dar erro no console
     <html lang="pt-BR" suppressHydrationWarning>
       <body
         className={`
@@ -45,10 +45,12 @@ export default function RootLayout({
         `}
       >
         <Providers>
-          {/* O overflow-x-hidden evita que o site "dance" pro lado se algo vazar */}
-          <div className="relative min-h-screen overflow-x-hidden">
-            {children}
-          </div>
+          {/* O LanguageProvider DEVE envolver o children para a Navbar funcionar */}
+          <LanguageProvider>
+            <div className="relative min-h-screen overflow-x-hidden">
+              {children}
+            </div>
+          </LanguageProvider>
         </Providers>
       </body>
     </html>
