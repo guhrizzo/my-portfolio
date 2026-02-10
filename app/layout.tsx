@@ -1,10 +1,16 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import "./globals.css";
-import { Poppins } from "next/font/google";
+import { Providers } from "./components/providers";
 
+// Configuração das fontes
 const geistSans = Geist({
   variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
   subsets: ["latin"],
 });
 
@@ -14,13 +20,8 @@ const poppins = Poppins({
   weight: ["400", "500", "600", "700"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
-  title: "Portfolio",
+  title: "Portfolio | Gustavo",
   description: "Gustavo's personal portfolio showcasing projects, skills, and experience in software development.",
 };
 
@@ -30,11 +31,25 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR">
+    // suppressHydrationWarning é essencial para o next-themes não dar erro no console
+    <html lang="pt-BR" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} antialiased`}
+        className={`
+          ${geistSans.variable} 
+          ${geistMono.variable} 
+          ${poppins.variable} 
+          font-poppins antialiased 
+          transition-colors duration-500 ease-in-out
+          bg-slate-50 text-slate-900 
+          dark:bg-slate-950 dark:text-slate-50
+        `}
       >
-        {children}
+        <Providers>
+          {/* O overflow-x-hidden evita que o site "dance" pro lado se algo vazar */}
+          <div className="relative min-h-screen overflow-x-hidden">
+            {children}
+          </div>
+        </Providers>
       </body>
     </html>
   );
