@@ -48,7 +48,7 @@ export default function MusicPlayer() {
 
   return (
     <div
-      className={`fixed bottom-6 left-6 z-[100] bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border border-slate-200 dark:border-slate-800 shadow-2xl rounded-2xl transition-all duration-300 overflow-hidden ${
+      className={`fixed bottom-6 left-6 z-100 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border border-slate-200 dark:border-slate-800 shadow-2xl rounded-2xl transition-all duration-300 overflow-hidden ${
         collapsed ? "w-56 p-2" : "w-80 p-4"
       }`}
     >
