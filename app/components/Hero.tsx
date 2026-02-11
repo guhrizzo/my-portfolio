@@ -53,7 +53,7 @@ export default function Hero() {
                         <ArrowRight size={20} />
                     </button>
 
-                    <button className="flex items-center gap-2 px-8 py-4 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white rounded-full cursor-pointer font-bold transition-all hover:bg-slate-50 dark:hover:bg-slate-800">
+                    <button className="flex items-center gap-2 px-20 lg:px-8 py-4 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white rounded-full cursor-pointer font-bold transition-all hover:bg-slate-50 dark:hover:bg-slate-800">
                         <Github size={20} />
                         GitHub
                     </button>

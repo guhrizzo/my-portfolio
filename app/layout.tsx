@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./components/providers";
-import { LanguageProvider } from "./components/LanguageContext"; // Importe o novo provider
+import { LanguageProvider } from "./components/LanguageContext";
+import MusicPlayer from "./components/MusicPlayer"; // Importando o novo player
 
 // Configuração das fontes
 const geistSans = Geist({
@@ -45,10 +46,12 @@ export default function RootLayout({
         `}
       >
         <Providers>
-          {/* O LanguageProvider DEVE envolver o children para a Navbar funcionar */}
           <LanguageProvider>
             <div className="relative min-h-screen overflow-x-hidden">
               {children}
+              
+              {/* O MusicPlayer inserido aqui garante que ele fique fixo na tela */}
+              <MusicPlayer />
             </div>
           </LanguageProvider>
         </Providers>

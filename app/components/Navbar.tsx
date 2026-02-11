@@ -30,12 +30,13 @@ export default function Navbar() {
   }, []);
 
   // Links vindos do arquivo de tradução
-  const navLinks = [
-    { name: t.nav.home, href: "#" },
-    { name: t.nav.about, href: "#sobre" },
-    { name: t.nav.projects, href: "#projetos" },
-    { name: t.nav.contact, href: "#contato" },
-  ];
+const navLinks = [
+  { name: t?.nav?.home || "Home", href: "#" },
+  { name: t?.nav?.about || "Sobre", href: "#sobre" },
+  { name: t?.nav?.projects || "Projetos", href: "#projetos" },
+  { name: t?.nav?.contact || "Contato", href: "#contato" },
+];
+
 
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${
