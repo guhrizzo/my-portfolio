@@ -26,7 +26,7 @@ export default function About() {
               {/* Imagem (Substitua o src pela sua foto) */}
               <div className="w-full h-full rounded-2xl bg-blue-600 overflow-hidden shadow-2xl">
                 <img 
-                  src="https://github.com/seu-usuario.png" 
+                  src="/foto-site.jpeg" 
                   alt="Sua Foto"
                   className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
                 />

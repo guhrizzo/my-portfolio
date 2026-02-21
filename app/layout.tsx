@@ -4,6 +4,7 @@ import "./globals.css";
 import { Providers } from "./components/providers";
 import { LanguageProvider } from "./components/LanguageContext";
 import MusicPlayer from "./components/MusicPlayer"; // Importando o novo player
+import SmoothScroll from "./components/SmoothScrool";
 
 // Configuração das fontes
 const geistSans = Geist({
@@ -36,23 +37,20 @@ export default function RootLayout({
     <html lang="pt-BR" suppressHydrationWarning>
       <body
         className={`
-          ${geistSans.variable} 
-          ${geistMono.variable} 
-          ${poppins.variable} 
-          font-poppins antialiased 
-          transition-colors duration-500 ease-in-out
-          bg-slate-50 text-slate-900 
-          dark:bg-slate-950 dark:text-slate-50
+          ${geistSans.variable} ${geistMono.variable} ${poppins.variable} 
+          font-poppins antialiased transition-colors duration-500
+          bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-50
         `}
       >
         <Providers>
           <LanguageProvider>
-            <div className="relative min-h-screen overflow-x-hidden">
-              {children}
-              
-              {/* O MusicPlayer inserido aqui garante que ele fique fixo na tela */}
-              <MusicPlayer />
-            </div>
+            {/* O SmoothScroll envolve o conteúdo principal */}
+            <SmoothScroll>
+              <div className="relative min-h-screen">
+                {children}
+                <MusicPlayer />
+              </div>
+            </SmoothScroll>
           </LanguageProvider>
         </Providers>
       </body>

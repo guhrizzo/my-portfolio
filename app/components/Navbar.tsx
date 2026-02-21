@@ -39,9 +39,9 @@ const navLinks = [
 
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${
+    <nav className={`fixed w-full z-50 transition-all border-b border-slate-200/10 duration-300 ${
       scrolled 
-        ? "py-3 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 shadow-sm" 
+        ? "py-3 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md  dark:border-slate-800 shadow-sm" 
         : "py-5 bg-transparent"
     }`}>
       {/* LINHA DE PROGRESSO (A fininha) */}

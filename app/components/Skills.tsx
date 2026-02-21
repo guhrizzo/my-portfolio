@@ -1,8 +1,8 @@
 export default function Skills() {
   const tech = [
     "Next.js", "TypeScript", "React", "Node.js", 
-    "Tailwind CSS", "Prisma", "PostgreSQL", "Docker", 
-    "Git", "Figma", "Firebase", "Storybook"
+    "Tailwind CSS", "Prisma", "Docker", 
+    "Git", "Figma", "Firebase",
   ];
 
   return (
